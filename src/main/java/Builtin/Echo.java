@@ -1,7 +1,5 @@
 package Builtin;
 
-import Quoting.Quotes;
-
 public class Echo {
     public void processArgument(String argument) {
 
@@ -10,17 +8,10 @@ public class Echo {
             return;
         }
 
-        Quotes quotes = new Quotes();
-        int quoteType = quotes.checkQuotes(argument);
-
-        switch (quoteType) {
-            case 1:
-                String toPrint = argument.substring(1, argument.length() - 1);
-                System.out.println(toPrint);
-            case 2:
-                System.out.println("double quoted");
-            default:
-                System.out.println("Error: Argument is not properly quoted.");
+        String toPrint = argument;
+        if(argument.startsWith("'") && argument.endsWith("'")) {
+            toPrint = argument.substring(1, argument.length() - 1);
         }
+        System.out.println(toPrint);
     }
 }

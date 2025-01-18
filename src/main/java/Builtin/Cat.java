@@ -1,7 +1,5 @@
 package Builtin;
 
-import Quoting.Quotes;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -20,18 +18,7 @@ public class Cat {
             System.out.println("Error: Argument is null or empty.");
             return;
         }
-
-        Quotes quotes = new Quotes();
-        int quoteType = quotes.checkQuotes(argument);
-
-        switch (quoteType) {
-            case 1:
-                printSingleQuote(argument);
-            case 2:
-                System.out.println("double quoted");
-            default:
-                System.out.println("Error: Argument is not properly quoted.");
-        }
+        printSingleQuote(argument);
     }
 
     // printing the content inside the file.
