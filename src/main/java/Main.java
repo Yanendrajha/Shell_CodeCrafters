@@ -17,7 +17,7 @@ public class Main {
 
             switch (command) {
                 case "exit" -> System.exit(0);
-
+                case "echo" -> System.out.println(argument);
                 default -> System.out.println(inputs + ": command not found");
             }
         }
