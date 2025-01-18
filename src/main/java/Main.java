@@ -1,3 +1,5 @@
+import Builtin.Type;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -18,6 +20,10 @@ public class Main {
             switch (command) {
                 case "exit" -> System.exit(0);
                 case "echo" -> System.out.println(argument);
+                case "type" -> {
+                    Type type = new Type();
+                    type.isBuiltinOrPathOrNon(argument);
+                }
                 default -> System.out.println(inputs + ": command not found");
             }
         }
