@@ -28,7 +28,7 @@ public class Cd {
 
         // checking if it is for home directory
         if (dir.equals("~"))
-            Paths.get(System.getenv("HOME"));
+             return Paths.get(System.getenv("HOME"));
 
         Path targetPath = cwd.resolve(dir); // Resolves the path relative to the current working directory.
 
