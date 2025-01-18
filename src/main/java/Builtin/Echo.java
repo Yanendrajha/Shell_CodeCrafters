@@ -15,7 +15,7 @@ public class Echo {
 
         switch (quoteType) {
             case 1:
-                String toPrint = argument.substring(1, argument.length() - 2);
+                String toPrint = argument.substring(1, argument.length() - 1);
                 System.out.println(toPrint);
             case 2:
                 System.out.println("double quoted");
