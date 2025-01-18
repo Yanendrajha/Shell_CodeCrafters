@@ -1,3 +1,4 @@
+import Builtin.Echo;
 import Builtin.Executable;
 import Builtin.Type;
 import Navigation.Cd;
@@ -21,7 +22,10 @@ public class Main {
 
             switch (command) {
                 case "exit" -> System.exit(0);
-                case "echo" -> System.out.println(argument);
+                case "echo" -> {
+                    Echo echo = new Echo();
+                    echo.processArgument(argument);
+                }
                 case "type" -> {
                     Type type = new Type();
                     type.isBuiltinOrPathOrNon(argument);
