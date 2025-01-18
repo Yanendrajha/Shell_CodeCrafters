@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +10,16 @@ public class Main {
         while (true) {
             System.out.print("$ ");
             String inputs = scanner.nextLine();
-            System.out.println(inputs + ": command not found");
+            String[] input = inputs.split(" ");
+            String command = input[0];
+            String argument = String.join(" ", Arrays.copyOfRange(input, 1, input.length));
+
+
+            switch (command) {
+                case "exit" -> System.exit(0);
+
+                default -> System.out.println(inputs + ": command not found");
+            }
         }
     }
 }
