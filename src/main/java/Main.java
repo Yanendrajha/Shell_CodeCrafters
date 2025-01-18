@@ -1,3 +1,4 @@
+import Builtin.Executable;
 import Builtin.Type;
 
 import java.util.Arrays;
@@ -24,7 +25,14 @@ public class Main {
                     Type type = new Type();
                     type.isBuiltinOrPathOrNon(argument);
                 }
-                default -> System.out.println(inputs + ": command not found");
+                default -> {
+                    if(!argument.isEmpty()) {
+                        Executable executable = new Executable();
+                        executable.execute(command, argument);
+                    } else {
+                        System.out.println(command + ": command not found");
+                    }
+                }
             }
         }
     }
