@@ -23,8 +23,9 @@ public class Main {
             switch (command) {
                 case "exit" -> System.exit(0);
                 case "echo" -> {
-                    Echo echo = new Echo();
-                    echo.processArgument(argument);
+                    System.out.println(argument);
+//                    Echo echo = new Echo();
+//                    echo.processArgument(argument);
                 }
                 case "type" -> {
                     Type type = new Type();
